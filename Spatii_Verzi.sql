@@ -70,3 +70,9 @@ create table if not exists salubritate(
 	nume_companie varchar not null,
 	foreign key(parc_fid) references parc(fid)
 );
+
+Select fid, ST_Area(geom) as area, ST_Perimeter(geom) as perimeter from parc;
+
+Select fid, ST_AsText(ST_Centroid(geom)) as centroid from parc;
+
+Select fid, ST_Length(geom) as length from alei;
